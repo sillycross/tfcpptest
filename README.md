@@ -17,7 +17,7 @@ The result is as follows.
 Additionally:
 * It takes about 130us to invoke Tensorflow from Python to do a trivial integer multiplication.
 * It takes about 8us to invoke Tensorflow from C++ to do a trivial integer multiplication.
-* It takes about 100us to do 547K 32-bit FMA ops using AVX2 on my CPU, but my CPU is actually performing worse with FMA than without. 
+* It takes about 100us to do 547K 32-bit FMA ops using AVX2 on my CPU, but my CPU is actually performing slightly worse with FMA than without, so this number is not a quantatively precise lower-bounding of the cost of one inference, though it should be close. 
 
 # Analysis and Lessions learned:
 
