@@ -1,7 +1,7 @@
 # Investigating performance of real-time Tensorflow inference
 
 The benchmarked RNN network (2-layer, 128 cells each) takes about 547K 32-bit FMA operations to do one inference.
-We investigated the latency of doing one single inference (no batching) on CPU.
+We investigated the latency of doing one single inference (no batching) on a single CPU.
 We investigated the following possibilities:
 * Using Tensorflow Python API.
 * Using Tensorflow C++ API.
