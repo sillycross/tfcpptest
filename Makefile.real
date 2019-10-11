@@ -11,7 +11,7 @@ INCLUDE_DIRS :=
 
 # additional g++ compiler flags
 #
-EXTRA_FLAGS := -isystem /usr/local/include/tensorflow -isystem /usr/local/include/tensorflow/bazel-genfiles -isystem /usr/local/include/tensorflow/bazel-genfiles/genfiles -isystem /usr/local/include/tensorflow/tensorflow/contrib/makefile/downloads -isystem /usr/local/include/tensorflow/tensorflow/contrib/makefile/downloads/absl -isystem /usr/local/include/tensorflow/tensorflow/contrib/makefile/downloads/eigen -isystem /usr/local/include/tensorflow/tensorflow/contrib/makefile/downloads/gemmlowp -isystem /usr/local/include/tensorflow/tensorflow/contrib/makefile/downloads/nsync/public -isystem /usr/local/include/tensorflow/tensorflow/contrib/makefile/gen/protobuf-host/include  -std=c++11
+EXTRA_FLAGS := -isystem /usr/local/include/tensorflow -isystem /usr/local/include/tensorflow/bazel-genfiles -isystem /usr/local/include/tensorflow/bazel-genfiles/genfiles -isystem /usr/local/include/tensorflow/tensorflow/contrib/makefile/downloads -isystem /usr/local/include/tensorflow/tensorflow/contrib/makefile/downloads/absl -isystem /usr/local/include/tensorflow/tensorflow/contrib/makefile/downloads/eigen -isystem /usr/local/include/tensorflow/tensorflow/contrib/makefile/downloads/gemmlowp -isystem /usr/local/include/tensorflow/tensorflow/contrib/makefile/downloads/nsync/public -isystem /usr/local/include/tensorflow/tensorflow/contrib/makefile/gen/protobuf-host/include  -std=c++11 -march=native
 
 ##########################################################
 
@@ -33,7 +33,7 @@ OBJS := $(subst .cpp,.o,$(OBJS))
 OBJS := $(subst /,.,$(OBJS))
 
 main: $(OBJS) libgtest.a generated.dependency ../../Makefile.real
-	g++ $(FLAGS) $(OBJS) libgtest.a -rdynamic -Wl,-rpath,/usr/local/lib/tensorflow_cc /usr/local/lib/tensorflow_cc/libtensorflow_cc.so -ldl -lpthread /usr/local/lib/tensorflow_cc/libprotobuf.a -o main
+	g++ $(FLAGS) $(OBJS) libgtest.a /usr/local/lib/tensorflow_cc/libprotobuf.a $(SRC_RELDIR)MusesRnnTfCompiled/libgraph.pic.a -rdynamic -Wl,-rpath,/usr/local/lib/tensorflow_cc /usr/local/lib/tensorflow_cc/libtensorflow_cc.so -ldl -lpthread  -o main
 
 generated.dependency: $(SRCS_AND_HEADERS) ../../Makefile.real
 	rm -f ./generated.dependency

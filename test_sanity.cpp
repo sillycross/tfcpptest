@@ -10,7 +10,7 @@
 using namespace std;
 using namespace tensorflow;
 
-TEST(TFCpp, Sanity)
+TEST(TFCppSanity, CreateSession)
 {
     Session* session;
     Status status = NewSession(SessionOptions(), &session);

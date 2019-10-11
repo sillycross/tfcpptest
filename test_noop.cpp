@@ -70,7 +70,7 @@ TEST(TFCpp, BenchmarkInvokeOverhead)
         }
 
         std::cout << "Accum = " << sum << std::endl;
-        std::cout << "Latency per inference is " << resultTime / numInputs * 1000.0 << "ms" << std::endl;
+        std::cout << "Latency per trivial TF call is " << resultTime / numInputs * 1000.0 << "ms" << std::endl;
     }
 
     session->Close();

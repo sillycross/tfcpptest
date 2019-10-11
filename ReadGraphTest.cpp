@@ -6,7 +6,7 @@
 
 using namespace tensorflow;
 
-TEST(TFCpp, ReadGraph)
+TEST(TFCppSanity, ReadGraph)
 {
   // Initialize a tensorflow session
   Session* session;

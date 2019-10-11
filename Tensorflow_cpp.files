@@ -1,3 +1,5 @@
+test_avx2fma.cpp
+test_tfcompile.cpp
 ReadGraphTest.cpp
 common.h
 fasttime.h
