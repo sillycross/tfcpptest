@@ -11,7 +11,7 @@ We investigated the following possibilities:
 
 The result is as follows.
 * It takes about 500us to invoke Tensorflow from Python to do one inference of the above-mentioned RNN network.
-* It takes about 160ns to invoke Tensorflow from C++ to do do one inference of the above-mentioned RNN network.
+* It takes about 160us to invoke Tensorflow from C++ to do do one inference of the above-mentioned RNN network.
 * It takes about 85us to do one inference using the Tensorflow AOT Compiled Binary of the RNN network from C++.
 
 Additionally:
